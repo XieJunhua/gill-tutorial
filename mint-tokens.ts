@@ -17,9 +17,9 @@ const { rpc, sendAndConfirmTransaction } = createSolanaClient({
 const { value: latestBlockhash } = await rpc.getLatestBlockhash().send();
 console.log(latestBlockhash);
 
-const mint = address("HQs8dFBuXHRp3mq7adcdsCyXKvzNtSMyp11A5nirrJn1");
+const mint = address("5LM59vxv5ZPepyDN9HbHbb3dcp7Sb8SsRxJBpb6NhwtT");
 // const owner = signer.address;
-const owner = address("AAX2xqhj3oy7BpNsKBzQv9xm7YUWJ4rjkXQhwnk6wHni");
+const owner = address("ELARR6taoGjv8SCvy7EhsmGKpSpBSz96yKBw1HSQheze");
 
 
 const ata = await getAssociatedTokenAccountAddress(
@@ -55,7 +55,7 @@ const tx2 = await buildMintTokensTransaction({
     feePayer: signer,
     version: "legacy",
     latestBlockhash,
-    amount: 1000000000,
+    amount: 100000000000,
     destination: owner,
     mintAuthority: signer,
     mint,

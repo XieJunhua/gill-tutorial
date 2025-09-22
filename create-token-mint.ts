@@ -35,9 +35,23 @@ const tx2 = await buildCreateTokenTransaction({
     latestBlockhash,
 })
 
+const tx3 = await buildCreateTokenTransaction({
+    feePayer: signer,
+    version: "legacy",
+    decimals: 9,
+    mint,
+    metadata: {
+        name: "Life++ Exploration Community",
+        symbol: "Life++",
+        uri: "https://gateway.irys.xyz/TQfa5EGdunAjEfNl-W8mVJgQOjdmNJqzqe_lc3dsIVE",
+        isMutable: true,
+    },
+    latestBlockhash,
+})
+
 
 const tx = await createTokenMint(mint, signer, latestBlockhash);
-const signedTx = await signTransactionMessageWithSigners(tx2);
+const signedTx = await signTransactionMessageWithSigners(tx3);
 console.log("signedTx:");
 console.log(signedTx);
 
